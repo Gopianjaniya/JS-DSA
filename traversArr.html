@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Array Insert Example</title>
+</head>
+
+<body>
+    <h2>Traverse Array</h2>
+
+    <button onclick="TraverseArr()">Display</button>
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7];
+        let currentSize = 0;
+
+        function TraverseArr(ele) {
+            arr.forEach((num, i) => {
+                console.warn(`at index ${i} element is ${num}`);
+            });
+        }
+    </script>
+</body>
+
+</html>

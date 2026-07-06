@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Array Insert Example</title>
+</head>
+
+<body>
+    <h2>Array me Element Insert</h2>
+    <input placeholder="enter number" id="id1" />
+    <button onclick="InsertElement()">Add Element</button>
+    <button onclick="Display()">Display</button>
+
+
+    <script>
+        let arr = [];
+        let currentSize = 0;
+
+        function InsertElement() {
+            let ele = document.getElementById("id1").value;
+            arr[currentSize] = ele;
+            currentSize++;
+            document.getElementById("id1").value = '';
+        }
+
+        function Display() {
+            console.warn(arr);
+        }
+    </script>
+</body>
+
+</html>

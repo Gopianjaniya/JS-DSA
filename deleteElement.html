@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Delete Element in Array</title>
+</head>
+
+<body>
+    <input placeholder="Enter position" id="position" />
+    <button onclick="deleteElement()">Delete ELement</button>
+    <button onclick="Display()">Display</button>
+
+    <script>
+        let arr = [11, 22, 3, 45, 67, 25, 77];
+
+        function deleteElement() {
+            let position = document.getElementById("position").value;
+
+            let num = Number(position);
+            let p = num - 1;
+
+            if (!position) {
+                return alert("please enter posotion");
+
+            }
+            if (arr.length < position) {
+                return alert("please required position");
+
+            }
+            if (typeof num == "number") {
+                for (let i = p; i < arr.length - 1; i++) {
+                    arr[i] = arr[i + 1];
+                }
+            }
+            arr.length = arr.length - 1;
+            document.getElementById("position").value = "";
+        }
+
+        function Display() {
+            console.log(arr);
+        }
+    </script>
+</body>
+
+</html>

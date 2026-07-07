@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Array Search Example</title>
+</head>
+
+<body>
+    <h2>
+        <h2>[10, 23, 34, 46, 52, 64, 57]</h2>
+    </h2>
+    <input placeholder="Enter Search value" id="num" />
+
+    <button onclick="searchElement()">searchElement</button>
+
+    <script>
+        let arr = [10, 23, 34, 46, 52, 64, 57];
+
+        function searchElement() {
+            let value = document.getElementById("num").value;
+            let num = Number(value);
+
+            if (
+                typeof num === "number" &&
+                num !== null &&
+                num !== undefined &&
+                value.trim() !== "" &&
+                !isNaN(num)
+            ) {
+                for (let i = 0; i < arr.length; i++) {
+                    if (num === arr[i]) {
+                        console.warn(`at index ${i} is element is ${num}`);
+                        document.getElementById("num").value = "";
+                    }
+                }
+            } else {
+                console.warn("please required input field");
+            }
+        }
+
+        function Display() {
+            console.log(arr);
+        }
+    </script>
+</body>
+
+</html>

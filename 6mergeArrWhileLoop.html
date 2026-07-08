@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Array Merge Example</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = [1, 2, 3, 4, 5, 6, 7]
+        let arr2 = [11, 22, 33, 44, 55, 66, 77]
+        let arr3 = []
+        let index = 0
+
+        function mergeArrWhileLoop() {
+            while (index < arr1.length) {
+                arr3.push(arr1[index])
+                index++
+            }
+            index = 0
+            while (index < arr2.length) {
+                arr3.push(arr2[index])
+                index++
+
+            }
+        }
+
+        function Display() {
+            console.log(arr3);
+
+        }
+        mergeArrWhileLoop()
+        Display()
+    </script>
+
+</body>
+
+</html>

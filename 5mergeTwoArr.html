@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Array Merge Example</title>
+</head>
+
+<body>
+    <h2 id="arr1"></h2>
+    <h2 id="arr2"></h2>
+    <h2 id="merged"></h2>
+
+    <script>
+        let arr1 = [14, 12, 34, 65, 78];
+        let arr2 = [11, 92, 38, 66, 74];
+        let arr3 = [];
+        let index = 0;
+
+        function mergeArr() {
+            for (let i = 0; i < arr1.length; i++) {
+                arr3[index] = arr1[i];
+                index++;
+            }
+            for (let j = 0; j < arr2.length; j++) {
+                arr3[index] = arr2[j];
+                index++;
+            }
+            document.getElementById("merged").innerText =
+                "Merged: " + arr3.join(", ");
+        }
+
+        function Display() {
+            console.log(arr3);
+        }
+        document.getElementById("arr1").innerText = "Array 1: " + arr1.join(", ");
+        document.getElementById("arr2").innerText = "Array 2: " + arr2.join(", ");
+    </script>
+
+    <button onclick="mergeArr()">Merge Array</button>
+    <button onclick="Display()">Display</button>
+</body>
+
+</html>

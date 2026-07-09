@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array Insert Example</title>
+</head>
+
+<body>
+    <h2>Reverse Array With Recursion</h2>
+
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7];
+
+        function beforeDisplay() {
+            console.log(`arr : ${arr}`)
+        }
+        beforeDisplay()
+
+        function reverseArr(arr, start, end) {
+            if (start <= end) {
+                let temp = arr[start]
+                arr[start] = arr[end]
+                arr[end] = temp
+                start++
+                end--
+                reverseArr(arr, start, end)
+            }
+        }
+        reverseArr(arr, 0, arr.length - 1)
+        afterDisplay()
+
+        function afterDisplay() {
+            console.log(`reverse arr : ${arr}`)
+        }
+    </script>
+</body>
+
+</html>

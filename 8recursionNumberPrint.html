@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Recursion</title>
+</head>
+
+<input placeholder="Enter number" id="id" />
+<button onclick="handle()">Enter</button>
+
+<body>
+    <script>
+        function handle() {
+            let num = Number(document.getElementById("id").value);
+
+
+            recursionPrint(num);
+            if (num == 0) {
+                console.log('Please Enter Number');
+                return;
+
+            }
+
+            document.getElementById("id").value = ''
+        }
+
+        function recursionPrint(num) {
+            if (0 < num) {
+                console.log(`${num}`)
+                recursionPrint(num - 1);
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+</html>

@@ -8,6 +8,7 @@
 <body>
     <input placeholder="Enter Number" id="id" />
     <button onclick="pushElement()">Push</button>
+    <button onclick="popElement()">Pop</button>
     <button onclick="Display()">Display</button>
 
     <script>
@@ -16,8 +17,13 @@
         let max = 5;
 
         function pushElement() {
-            let num = Number(document.getElementById("id").value);
-            if (len > max) {
+            let n = document.getElementById("id").value.trim();
+            let num = Number(n);
+
+            if (n === "" || isNaN(n)) {
+                console.warn("Please enter number");
+            }
+            if (arr.length >= max) {
                 console.warn("Stack is Already full");
                 return;
             }
@@ -26,6 +32,14 @@
                 arr.push(num);
             }
             document.getElementById("id").value = "";
+        }
+
+        function popElement() {
+            if (arr.length <= 0) {
+                console.warn("Stack is Already empty");
+                return;
+            }
+            arr.pop();
         }
 
         function Display() {

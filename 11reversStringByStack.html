@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Stack</title>
+</head>
+
+<body>
+    <input placeholder="Enter any string for revers" id="reverse" />
+    <button onclick="reversStrWithStack()">Enter</button>
+
+    <script>
+        let arr = [];
+        let currentSize = arr.length;
+
+        function push(val) {
+            arr[currentSize] = val;
+            currentSize++;
+        }
+
+        function pop() {
+            let lastElement = arr[currentSize - 1];
+            currentSize--;
+            arr.length = currentSize;
+            return lastElement;
+        }
+
+        function reversStrWithStack() {
+            let str = document.getElementById("reverse").value;
+            let newStr = str.split("");
+
+            if (str === "" || !isNaN(str)) {
+                console.warn("Please Enter String.");
+                return;
+            }
+            console.warn("Before ==> ", str);
+            for (let i = 0; i <= newStr.length - 1; i++) {
+                push(newStr[i]);
+            }
+
+            for (let i = 0; i <= newStr.length - 1; i++) {
+                let lastEle = pop();
+                newStr[i] = lastEle;
+            }
+            console.warn("After ==>", newStr.join(""));
+            document.getElementById("reverse").value = "";
+        }
+    </script>
+</body>
+
+</html>

@@ -13,7 +13,7 @@
 
     <script>
         let arr = [];
-        let len = arr.length;
+        let currentSize = arr.length;
         let max = 5;
 
         function pushElement() {
@@ -24,12 +24,15 @@
                 console.warn("Please enter number");
             }
             if (arr.length >= max) {
-                console.warn("Stack is Already full");
+                console.warn(`Stack is Already full, ${num} is not add`);
                 return;
             }
 
             if (!isNaN(num) && num != 0) {
-                arr.push(num);
+                arr[currentSize] = num
+                console.warn(`${arr[currentSize]} is add in Stack`)
+                currentSize++
+
             }
             document.getElementById("id").value = "";
         }
@@ -39,7 +42,9 @@
                 console.warn("Stack is Already empty");
                 return;
             }
-            arr.pop();
+            console.warn(`${arr[currentSize-1]} is remove in Stack`)
+            currentSize--
+            arr.length = currentSize
         }
 
         function Display() {

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Queue</title>
+</head>
+
+<body>
+    <input placeholder="Enter number" id="id" />
+    <button onclick="enqueue()">Enqueue</button>
+    <button onclick="dequeue()">Dequeue</button>
+    <button onclick="display()">Display</button>
+
+    <script>
+        let queue = [];
+        let currentSize = queue.length;
+        // ================ Enqueue ====================
+        function enqueue() {
+            let value = document.getElementById("id").value;
+            if (value === "" || isNaN(value)) {
+                console.warn("Please Enter value");
+                return;
+            }
+
+            queue[currentSize] = value;
+            currentSize++;
+            document.getElementById("id").value = "";
+        }
+        // ================ Dequeue ====================
+
+        function dequeue() {
+            if (currentSize <= 0) {
+                console.warn('queue is Empty')
+                return
+
+            }
+            for (let i = 0; i <= queue.length - 1; i++) {
+                queue[i] = queue[i + 1]
+            }
+            currentSize--;
+            queue.length = currentSize
+
+        }
+
+        function display() {
+            console.log(queue);
+        }
+    </script>
+</body>
+
+</html>

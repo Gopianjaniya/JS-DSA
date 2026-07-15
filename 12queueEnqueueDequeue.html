@@ -10,36 +10,56 @@
     <button onclick="enqueue()">Enqueue</button>
     <button onclick="dequeue()">Dequeue</button>
     <button onclick="display()">Display</button>
+    <button onclick="front()">Front</button>
+    <button onclick="rear()">Rear</button>
 
     <script>
         let queue = [];
         let currentSize = queue.length;
+        let max = 5;
         // ================ Enqueue ====================
         function enqueue() {
             let value = document.getElementById("id").value;
-            if (value === "" || isNaN(value)) {
+            if (max <= currentSize) {
+                console.warn("Queue is Already full");
+                return;
+            } else if (value === "" || isNaN(value)) {
                 console.warn("Please Enter value");
                 return;
+            } else {
+                queue[currentSize] = value;
+                currentSize++;
+                document.getElementById("id").value = "";
             }
-
-            queue[currentSize] = value;
-            currentSize++;
-            document.getElementById("id").value = "";
         }
         // ================ Dequeue ====================
 
         function dequeue() {
             if (currentSize <= 0) {
-                console.warn('queue is Empty')
-                return
-
+                console.warn("queue is Empty");
+                return;
             }
             for (let i = 0; i <= queue.length - 1; i++) {
-                queue[i] = queue[i + 1]
+                queue[i] = queue[i + 1];
             }
             currentSize--;
-            queue.length = currentSize
+            queue.length = currentSize;
+        }
 
+        function front() {
+            if (currentSize == 0) {
+                console.warn("queue is Empty");
+            } else {
+                console.warn("Front Value : ", queue[0])
+            }
+        }
+
+        function rear() {
+            if (currentSize == 0) {
+                console.warn("queue is Empty");
+            } else {
+                console.warn("Rear Value : ", queue[currentSize - 1])
+            }
         }
 
         function display() {

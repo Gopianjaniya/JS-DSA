@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Array Insert Example</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 2, 3, 4, 5, 3, 4, 5, 6, 7, 7];
+        let duplicate = []
+
+        function findDuplicateNum(arr) {
+            let set = new Set();
+            for (let i = 0; i < arr.length; i++) {
+                if (set.has(arr[i])) {
+                    duplicate.push(arr[i])
+                }
+                set.add(arr[i])
+            }
+
+
+            console.log(`Duplicate numbers : `, duplicate);
+        }
+        findDuplicateNum(arr)
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

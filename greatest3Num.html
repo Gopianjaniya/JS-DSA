@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head> </head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7];
+        let first = -Infinity;
+        let second = -Infinity;
+        let third = -Infinity;
+        console.warn("array : ", arr)
+
+        function greatest3Num(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                if (first < arr[i]) {
+                    third = second
+                    second = first
+                    first = arr[i]
+                } else if (second < arr[i]) {
+                    third = second
+                    second = arr[i]
+                } else if (third < arr[i]) {
+                    third = arr[i];
+                }
+            }
+            console.warn(third);
+        }
+        greatest3Num(arr)
+    </script>
+</body>
+
+</html>

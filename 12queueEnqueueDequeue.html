@@ -28,6 +28,7 @@
                 return;
             } else {
                 queue[currentSize] = value;
+                console.log(`Add: ${value}, Current Queue:`, queue);
                 currentSize++;
                 document.getElementById("id").value = "";
             }
@@ -39,9 +40,11 @@
                 console.warn("queue is Empty");
                 return;
             }
-            for (let i = 0; i <= queue.length - 1; i++) {
-                queue[i] = queue[i + 1];
-            }
+            // for (let i = 0; i <= queue.length - 1; i++) {
+            //     queue[i] = queue[i + 1];
+            // }
+            let removedItem = queue.shift();
+            console.log(`Removed: ${removedItem}, Current Queue:`, queue);
             currentSize--;
             queue.length = currentSize;
         }

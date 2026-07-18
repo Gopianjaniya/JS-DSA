@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input placeholder="Enter number" id="val">
+    <button onclick="enqueue()">Enqueue</button>
+    <button onclick="dequeue()">Dequeue</button>
+
+
+    <script>
+        let queue = []
+        let currentSize = queue.length
+        let max = 5
+        let front = -1
+        let rear = -1
+
+        function enqueue() {
+            let value = document.getElementById('val').value
+            if ((rear + 1) % max == front) {
+                console.warn("Circular Queue is Already Full!");
+                return;
+            }
+            if (front == -1) {
+                front == 0
+            }
+
+            rear = (rear + 1) % max
+            queue[rear] = value
+            console.log(`Enqueued: ${value} | Current Queue Structure:`, queue);
+            document.getElementById('val').value = ''
+        }
+
+        function dequeue() {
+            if (front == -1) {
+                console.warn("Circular Queue is Empty!");
+                return;
+            }
+            let removedValue = queue[front]
+            queue[front] = null
+            if (front === rear) {
+                front = -1
+                rear = -1
+            } else {
+                front = (front + 1) % max;
+
+            }
+            console.log(`Dequeued: ${removedValue} | Current Queue Structure:`, queue);
+
+        }
+    </script>
+</body>
+
+</html>

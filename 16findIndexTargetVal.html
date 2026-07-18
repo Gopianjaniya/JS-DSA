@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array Insert Example</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let arr = [1, 2, 3, 7, 8, 9, 12, 56, 66, 77];
+        let target = 8
+        let left = 0;
+        let right = arr.length - 1
+        let hashMap = new Map()
+
+        function FindIndexTargetVal(arr, target) {
+            while (left < right) {
+                let result = arr[left] + arr[right]
+                if (target == result) {
+                    console.warn([left, right])
+                    return;
+                } else if (result < target) {
+                    left++
+                } else if (result > target) {
+                    right--
+                }
+            }
+            console.warn("No pair found");
+        }
+
+        FindIndexTargetVal(arr, target)
+    </script>
+</body>
+
+</html>

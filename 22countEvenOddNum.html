@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head> </head>
+
+<body>
+    <script>
+        // let arr = [1, 2, 3, 4, 5];
+        let arr = [-1, -2, -3, -4]
+            // let arr = [2, 4, 6, 8];
+
+        function countEvenOddNum(arr) {
+            let even = 0,
+                odd = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    even++;
+                } else {
+                    odd++;
+                }
+            }
+            // return `Even : ${even} \n  Odd : ${odd}`;
+            return {
+                even,
+                odd
+            }
+        }
+        let result = countEvenOddNum(arr);
+        console.warn(result);
+    </script>
+</body>
+
+</html>

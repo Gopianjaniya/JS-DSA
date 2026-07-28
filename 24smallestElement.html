@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head> </head>
+
+<body>
+    <script>
+        let arr = [11, 12, 31, 41, 51, 6, 6]
+
+        function smallestElement(arr) {
+            let small = arr[0]
+            if (!arr || arr.length === 0) {
+                return null;
+            }
+            for (let i = 1; i < arr.length; i++) {
+                if (small > arr[i]) {
+                    small = arr[i]
+                }
+            }
+            return small
+        }
+        let result = smallestElement(arr)
+        console.warn(`${result} is a smallest Element in this arr : ${arr}`)
+    </script>
+</body>
+
+</html>

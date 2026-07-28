@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head> </head>
+
+<body>
+    <script>
+        let arr = [10];
+        console.warn(`array : ${arr}`)
+
+        function reverseArray(arr) {
+            let start = 0;
+            let end = arr.length - 1;
+            while (start < end) {
+                // let temp = arr[start];
+                // arr[start] = arr[end];
+                // arr[end] = temp;
+                arr[start] = arr[start] ^ arr[end]
+                arr[end] = arr[start] ^ arr[end]
+                arr[start] = arr[start] ^ arr[end]
+                start++
+                end--
+            }
+            return arr
+        }
+        let result = reverseArray(arr);
+        console.warn(`reverse array : ${result}`)
+    </script>
+</body>
+
+</html>

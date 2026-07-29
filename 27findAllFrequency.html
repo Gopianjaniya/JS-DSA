@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head> </head>
+
+<body>
+    <script>
+        let arr = [1, 2, 2, 3, 2, 4];
+
+        function findFrequency(arr) {
+            let freq = {};
+
+            for (let i = 0; i < arr.length; i++) {
+                let current = arr[i];
+                if (freq[current]) {
+                    freq[current] = (freq[current] || 0) + 1;
+                } else {
+                    freq[current] = 1;
+                }
+            }
+            return freq;
+        }
+        let result = findFrequency(arr);
+        console.warn(result);
+    </script>
+</body>
+
+</html>

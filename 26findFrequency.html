@@ -9,6 +9,9 @@
         let target = 2;
 
         function findFrequency(arr, target) {
+            if (!arr || arr.length === 0) {
+                return 0
+            }
             let count = 0;
             for (let i = 0; i < arr.length; i++) {
                 if (target === arr[i]) {

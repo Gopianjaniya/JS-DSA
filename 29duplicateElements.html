@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head> </head>
+
+<body>
+    <script>
+        let arr = []
+
+        function duplicateElements(arr) {
+            let hashMap = {};
+            let duplicate = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (hashMap[arr[i]]) {
+                    hashMap[arr[i]]++;
+                } else {
+                    hashMap[arr[i]] = 1;
+                }
+
+                if (hashMap[arr[i]] === 2) {
+                    duplicate.push(arr[i]);
+                }
+            }
+
+            return duplicate;
+        }
+        let result = duplicateElements(arr);
+        console.warn(result);
+    </script>
+</body>
+
+</html>

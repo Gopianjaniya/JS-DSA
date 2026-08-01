@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head> </head>
+
+<body>
+    <script>
+        let arr = [100, 50, 100, 25];
+
+        function NonRepeatingElement(arr) {
+            let freq = {};
+            for (let i = 0; i < arr.length; i++) {
+                let current = arr[i];
+                if (freq[current]) {
+                    freq[current]++;
+                } else {
+                    freq[current] = 1;
+                }
+            }
+            for (let i = 0; i < arr.length; i++) {
+                if (freq[arr[i]] === 1) {
+                    return arr[i];
+                }
+            }
+            return -1;
+        }
+        let result = NonRepeatingElement(arr);
+        console.warn(result);
+    </script>
+</body>
+
+</html>

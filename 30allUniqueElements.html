@@ -5,26 +5,26 @@
 
 <body>
     <script>
-        let arr = [1, 1, 1, 2, 2, 2, 3]
+        let arr = [1, 2, 3, 4, 1, 2, 3];
 
-        function duplicateElements(arr) {
+        function allUniqueElements(arr) {
             let hashMap = {};
-            let duplicate = [];
+            let unique = [];
             for (let i = 0; i < arr.length; i++) {
                 if (hashMap[arr[i]]) {
                     hashMap[arr[i]]++;
                 } else {
                     hashMap[arr[i]] = 1;
                 }
-
-                if (hashMap[arr[i]] === 2) {
-                    duplicate.push(arr[i]);
+            }
+            for (let i = 0; i < arr.length; i++) {
+                if (hashMap[arr[i]] === 1) {
+                    unique.push(arr[i]);
                 }
             }
-
-            return duplicate;
+            return unique;
         }
-        let result = duplicateElements(arr);
+        let result = allUniqueElements(arr);
         console.warn(result);
     </script>
 </body>

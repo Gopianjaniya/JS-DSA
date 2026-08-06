@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head> </head>
+
+<body>
+    <script>
+        let arr = [1, 3, 4, 5, 6, 7];
+        let n = 7;
+
+        function missingNumber(arr, n) {
+            let hashMap = {};
+            for (let i = 0; i < arr.length; i++) {
+                hashMap[arr[i]] = true;
+            }
+            for (let i = 1; i <= n; i++) {
+                if (!hashMap[i]) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        let result = missingNumber(arr, n);
+        console.warn("missing Number : ", result);
+    </script>
+</body>
+
+</html>
